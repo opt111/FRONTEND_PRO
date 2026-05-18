@@ -1,4 +1,5 @@
 let usd = 26;
-let hrn = prompt("Введіть сумму в гривнях");
 
-console.log(`${hrn}ГРН в доларах буде ${Math.round(hrn / usd)}$`)
+for (let i = 10; i <= 100; i = i + 10) {
+  console.log(`${i}$ = ${usd * i}грн`)
+}
