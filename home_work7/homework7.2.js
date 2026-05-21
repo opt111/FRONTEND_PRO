@@ -4,8 +4,10 @@ function averageNum() {
 
   let result = 0;
   for (let a of array) {
-    if (typeof(a) === 'number') {
+    if (typeof (a) === 'number') {
       result = result + a;
+    } else {
+      result += 0;
     }
 
   }
