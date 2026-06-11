@@ -1,13 +1,19 @@
 // в циклі створювати локумент креат елемент створювати трку і вкладеним створювати тдшку
 const table = document.querySelector('table');
 
-const newTr = document.createElement('tr')
+for (let i = 1; i <= 10; i++) {
+  const newTr = document.createElement('tr')
 
-for(let i = 1; i <= 10; i++) {
+
+  for (let j = 1; j <= 10; j++) {
+    const newTd = document.createElement('td')
 
 
-  for(let j = 1; j <= 10; i++){
-    
+    newTd.textContent = j * i
+    newTr.appendChild(newTd)
+
 
   }
+  table.appendChild(newTr)
+
 }
