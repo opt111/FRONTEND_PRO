@@ -1,0 +1,12 @@
+.buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  height: 97vh;
+  align-items: center;
+}
+
+.btn {
+  min-height: 25px;
+  min-width: 100px;
+}
