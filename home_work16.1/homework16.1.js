@@ -1,13 +1,3 @@
-const marks = [];
-for (let i = 0; i < 25; i++) {
-  const mark = Math.floor(Math.random() * 100) + 1;
-
-  marks.push(mark)
-
-}
-
-const attendance = []
-
 class Student {
   constructor(name, surname, year, attendance = [], marks = []) {
     this.name = name;
@@ -66,8 +56,6 @@ class Student {
     }
   }
 }
-
-const Student1 = new Student('Oleh', "Sych", 2003, attendance, marks)
 
 console.log('-----Перевірка Студент 1-----')
 
