@@ -1,0 +1,3 @@
+.todo-card { max-width: 620px; }
+.todo-item { cursor: pointer; }
+.todo-item:hover { background: #f8f9fa; }

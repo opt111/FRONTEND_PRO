@@ -41,6 +41,21 @@ build/Release
 node_modules/
 jspm_packages/
 
+# Build output
+build/
+dist/
+
+# Local editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 

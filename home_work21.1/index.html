@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ДЗ 21.1 — TODO list через Babel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="todo-app">
+    <header><span class="badge">Babel</span><h1>Мій TODO list</h1><p>Оптимізована версія попереднього завдання</p></header>
+    <form id="todo-form" novalidate>
+      <label class="sr-only" for="todo-input">Нове завдання</label>
+      <input id="todo-input" type="text" placeholder="Що потрібно зробити?" autocomplete="off">
+      <button type="submit">Додати</button>
+    </form>
+    <p id="error" class="error" role="alert"></p>
+    <ul id="todo-list" aria-label="Список завдань"></ul>
+    <footer><span id="counter">Завдань: 0</span><button id="clear" class="clear" type="button">Очистити все</button></footer>
+  </main>
+  <script src="dist/index.js"></script>
+</body>
+</html>

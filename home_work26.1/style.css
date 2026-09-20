@@ -1,0 +1,18 @@
+body {
+  text-align: center;
+  font: 20px Arial;
+  padding: 60px
+}
+
+.emoji {
+  border: 0;
+  background: white;
+  font-size: 65px;
+  cursor: pointer;
+  margin: 12px
+}
+
+.emoji small {
+  font-size: 20px;
+  margin-left: 7px
+}

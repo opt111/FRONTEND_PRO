@@ -1,0 +1,10 @@
+require('dotenv').config();
+const express=require('express');const cors=require('cors');const mongoose=require('mongoose');const app=express();const port=process.env.PORT||3001;
+app.use(cors());app.use(express.json());app.use(express.static('client'));
+const Todo=mongoose.model('Todo',new mongoose.Schema({text:{type:String,required:true,trim:true},completed:{type:Boolean,default:false}},{timestamps:true}));
+app.get('/api/todos',async(_req,res,next)=>{try{res.json(await Todo.find().sort('-createdAt'))}catch(error){next(error)}});
+app.post('/api/todos',async(req,res,next)=>{try{const text=req.body.text?.trim();if(!text)return res.status(400).json({message:'Вкажіть текст завдання.'});res.status(201).json(await Todo.create({text}))}catch(error){next(error)}});
+app.patch('/api/todos/:id',async(req,res,next)=>{try{const todo=await Todo.findByIdAndUpdate(req.params.id,req.body,{new:true});if(!todo)return res.status(404).json({message:'Завдання не знайдено.'});res.json(todo)}catch(error){next(error)}});
+app.delete('/api/todos/:id',async(req,res,next)=>{try{await Todo.findByIdAndDelete(req.params.id);res.status(204).end()}catch(error){next(error)}});
+app.use((error,_req,res,_next)=>res.status(500).json({message:error.message}));
+mongoose.connect(process.env.MONGO_URI,{serverSelectionTimeoutMS:5000}).then(()=>{console.log('MongoDB connected.');app.listen(port,()=>console.log(`API і клієнт: http://localhost:${port}`))}).catch(()=>{console.error('MongoDB не запущена. Запустіть MongoDB, потім повторіть npm.cmd start.');process.exit(1)});

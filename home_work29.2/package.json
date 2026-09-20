@@ -1,0 +1,1 @@
+{"scripts":{"start":"vite","build":"vite build"},"dependencies":{"@vitejs/plugin-react":"latest","vite":"latest","react":"latest","react-dom":"latest","react-redux":"latest","redux":"latest"}}
